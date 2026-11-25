@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+  <title>TikTok-Verbindung · Medienwerkstatt</title><link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="legal">
+    <p class="eyebrow">TikTok-Verbindung</p><h1 id="headline">Fast fertig</h1>
+    <div id="ok" hidden><p class="lead">TikTok hat die Freigabe erteilt. Kopiere die vollständige Adresse und übergib sie direkt an die lokale Medienwerkstatt. Die Adresse ist nur kurz gültig und enthält kein TikTok-Passwort.</p><textarea id="address" readonly aria-label="Rückrufadresse"></textarea><p><button class="button" id="copy" type="button">Adresse kopieren</button> <span id="copied" hidden>Kopiert.</span></p></div>
+    <p id="denied" class="placeholder" hidden>Die Freigabe wurde abgebrochen oder es fehlt ein gültiger Rückrufcode. Starte die Verbindung erneut in der Medienwerkstatt.</p>
+    <p><a href="../privacy-de.html">Datenschutzerklärung</a></p>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get("code") && params.get("state")) {
+      document.getElementById("ok").hidden = false;
+      const field = document.getElementById("address");
+      field.value = location.href;
+      document.getElementById("copy").onclick = async () => {
+        try { await navigator.clipboard.writeText(field.value); } catch { field.select(); document.execCommand("copy"); }
+        document.getElementById("copied").hidden = false;
+      };
+    } else {
+      document.getElementById("headline").textContent = "Nicht verbunden";
+      document.getElementById("denied").hidden = false;
+    }
+  </script>
+</body>
+</html>

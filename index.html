@@ -1,36 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Medienwerkstatt</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Medienwerkstatt is a locally operated workflow for producing, reviewing and publishing short-form videos.">
+  <title>Medienwerkstatt · Short-form video workflow</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Medienwerkstatt</h1>
-  <p class="lead">A private, self-hosted tool that produces short animated story videos and publishes them
-  to the operator's <strong>own</strong> YouTube channels.</p>
+  <header class="site-header">
+    <a class="brand" href="index.html">Medienwerkstatt</a>
+    <nav aria-label="Legal and language navigation">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="imprint.html">Contact</a>
+      <a class="language" href="de.html" lang="de">Deutsch</a>
+    </nav>
+  </header>
 
-  <h2>What it does</h2>
-  <ul>
-    <li>Writes short fictional stories, turns them into narrated vertical videos with illustrations and subtitles.</li>
-    <li>Uploads the finished videos to YouTube channels owned by the operator, using the YouTube Data API.</li>
-    <li>Reads view, like and comment counts of those uploaded videos to learn which stories work best.</li>
-  </ul>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Local production · deliberate publishing</p>
+      <h1>From source material to a reviewed short-form video.</h1>
+      <p class="lead">Medienwerkstatt is a desktop workflow for creating, checking and publishing vertical videos to authorised media channels. Production files and account credentials remain under the operator's control.</p>
+      <div class="actions">
+        <a class="button" href="#workflow">How it works</a>
+        <a class="text-link" href="privacy.html">Read the Privacy Policy</a>
+      </div>
+    </section>
 
-  <h2>Who uses it</h2>
-  <p>Only the operator. It is not a public service: there are no user accounts, no sign-ups and no third-party
-  channels. The software runs on the operator's own computer.</p>
+    <section class="section" aria-labelledby="capabilities-title">
+      <div>
+        <p class="eyebrow">What it does</p>
+        <h2 id="capabilities-title">One controlled media workflow</h2>
+      </div>
+      <div class="cards">
+        <article>
+          <span class="step">01</span>
+          <h3>Produce</h3>
+          <p>Prepare short-form videos from authorised media, narration, subtitles and locally managed assets.</p>
+        </article>
+        <article>
+          <span class="step">02</span>
+          <h3>Review</h3>
+          <p>Check the final video, destination account, caption, disclosures and publishing settings before release.</p>
+        </article>
+        <article>
+          <span class="step">03</span>
+          <h3>Publish</h3>
+          <p>Transfer approved videos through official platform interfaces or hand them to the platform inbox for completion.</p>
+        </article>
+      </div>
+    </section>
 
-  <h2>Use of YouTube API Services</h2>
-  <p>Medienwerkstatt uses YouTube API Services. By using it you agree to the
-  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.
-  See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>.</p>
+    <section class="section split" id="workflow">
+      <div>
+        <p class="eyebrow">Platform connections</p>
+        <h2>Only the permissions needed for the selected action</h2>
+      </div>
+      <div>
+        <p>Medienwerkstatt can connect authorised YouTube and TikTok accounts. TikTok connections use basic account information and, when enabled, permission to upload a video to the user's TikTok inbox. Direct publishing is used only when it has been separately configured and approved.</p>
+        <p>The website itself has no login, does not accept visitor uploads and does not use analytics, advertising pixels or marketing cookies.</p>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p><a href="mailto:hmnprjct1@gmail.com">hmnprjct1@gmail.com</a></p>
-</main>
-<footer><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="de.html">Deutsch</a></footer>
+    <section class="notice" aria-labelledby="control-title">
+      <div>
+        <p class="eyebrow">Operator control</p>
+        <h2 id="control-title">Nothing is published merely by visiting this website.</h2>
+      </div>
+      <p>Publishing actions happen inside the local Medienwerkstatt application after account authorisation and an explicit release decision.</p>
+    </section>
+
+    <section class="section compact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Questions about the service or your data?</h2>
+      </div>
+      <p><a href="mailto:hmnprjct1@gmail.com">hmnprjct1@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Medienwerkstatt</span>
+    <nav aria-label="Footer navigation">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="imprint.html">Contact &amp; provider information</a>
+    </nav>
+  </footer>
 </body>
 </html>
