@@ -32,9 +32,6 @@ jobs:
       - name: Render provider information outside Git history
         env:
           PROVIDER_NAME: ${{ secrets.PROVIDER_NAME }}
-          PROVIDER_STREET: ${{ secrets.PROVIDER_STREET }}
-          PROVIDER_CITY: ${{ secrets.PROVIDER_CITY }}
-          PROVIDER_COUNTRY: ${{ secrets.PROVIDER_COUNTRY }}
         run: python scripts/render_imprint.py --output _site/imprint.html
 
       - name: Configure Pages

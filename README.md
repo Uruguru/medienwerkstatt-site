@@ -12,13 +12,10 @@ Expected project-site URL after publishing:
 https://uruguru.github.io/medienwerkstatt-site/
 ```
 
-Provider details are deliberately excluded from Git history. Configure these GitHub Actions repository secrets before the first deployment:
+The operator name is deliberately excluded from Git history. Configure this GitHub Actions repository secret before the first deployment:
 
 - `PROVIDER_NAME`
-- `PROVIDER_STREET`
-- `PROVIDER_CITY`
-- `PROVIDER_COUNTRY`
 
-The workflow renders `imprint.template.html` into the public `imprint.html` only inside the deployment artifact. The resulting page is public, but the address is not committed to the repository.
+The workflow renders `imprint.template.html` into the public `imprint.html` only inside the deployment artifact. The resulting contact page is public, but the name is not committed to the repository. A postal address is intentionally not deployed; whether one is legally required for the operator's actual use must be assessed separately.
 
 For TikTok URL-prefix verification, place the signature file supplied by TikTok at the exact requested path, commit it, and verify that the resulting HTTPS URL is publicly accessible.

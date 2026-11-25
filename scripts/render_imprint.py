@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 
 
-FIELDS = ("PROVIDER_NAME", "PROVIDER_STREET", "PROVIDER_CITY", "PROVIDER_COUNTRY")
+FIELDS = ("PROVIDER_NAME",)
 
 
 def render(template: Path, output: Path) -> None:
