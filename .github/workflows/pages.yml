@@ -1,0 +1,50 @@
+name: Deploy GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Prepare static website
+        shell: bash
+        run: |
+          mkdir -p _site/tiktok
+          cp .nojekyll 404.html de.html index.html privacy-de.html privacy.html style.css terms-de.html terms.html _site/
+          cp tiktok/callback.html _site/tiktok/callback.html
+
+      - name: Render provider information outside Git history
+        env:
+          PROVIDER_NAME: ${{ secrets.PROVIDER_NAME }}
+          PROVIDER_STREET: ${{ secrets.PROVIDER_STREET }}
+          PROVIDER_CITY: ${{ secrets.PROVIDER_CITY }}
+          PROVIDER_COUNTRY: ${{ secrets.PROVIDER_COUNTRY }}
+        run: python scripts/render_imprint.py --output _site/imprint.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
